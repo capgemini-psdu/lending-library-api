@@ -2,14 +2,31 @@
 A trivial implementation of a GOV.UK application using Spark Java.
 
 ## Dependencies
-Requires Java 8 plus Maven or Gradle. A Gradle wrapper (gradlew) is also included if you don't want to install Gradle/Maven.
+There are several different ways of building and running this application but as a minimum you will need Java 8 and internet access.
 
-## Maven example
-Build using: mvn clean package
+Ideally you will also have Maven or Gradle installed, although you can use the Gradle Wrapper that's bundled with the application instead if you prefer.
 
-Run using: mvn exec:java -Dexec.mainClass="Application"
+Whichever method you use the application will start on the port configured in the Application.java class.
 
-## Gradle example
-Build using: gradle build
+## Building and running with bundled Gradle Wrapper
+Use this method if you cannot install Maven or Gradle on your target machine.
 
-Run using: gradle run
+Simply run the Gradle Wrapper `gradlew` script with the run command:
+
+`gradlew run`
+
+This will download all the application's dependencies from the internet, compile the application and start the application.
+
+## Building and running with Maven
+If you have Maven installed on your target machine then you can use that to build and then run the application:
+
+`mvn clean package`
+
+`mvn exec:java -Dexec.mainClass="Application"`
+
+## Building and running with Gradle
+If you have Gradle installed on your target machine then you can use that to build and then run the application:
+
+`gradle build`
+
+`gradle run`
