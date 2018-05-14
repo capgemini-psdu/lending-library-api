@@ -16,8 +16,13 @@ repositories {
      jcenter()
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
-    implementation group: 'com.sparkjava', name: 'spark-core', version:'2.5'
+    implementation group: 'com.sparkjava', name: 'spark-core', version:'2.7.1'
     implementation group: 'com.sparkjava', name: 'spark-debug-tools', version:'0.5'
     implementation group: 'com.sparkjava', name: 'spark-template-velocity', version:'2.3'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version:'1.7.13'
@@ -28,4 +33,11 @@ dependencies {
 	//Adding annotation processor task for lombok
     compileOnly group:'org.projectlombok', name:'lombok', version:'1.16.20'
     annotationProcessor group:'org.projectlombok', name:'lombok', version:'1.16.20'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    testImplementation 'org.json:json:20160212'
+    
+    //Junit
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.2.0")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.2.0")
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
 }
